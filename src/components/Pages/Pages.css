@@ -1,7 +1,7 @@
-/* ====(Page Template)==== */
+/* ====(All Pages Template)==== */
 
 .page-container {
-    height: 40vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,8 +16,23 @@
     padding: 1rem;
 }
 
-.new-item-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* ====(NewItem.js - Form CSS)==== */
+.form-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.form-label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
 }
