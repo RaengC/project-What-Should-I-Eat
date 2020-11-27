@@ -1,4 +1,5 @@
-// barrel export
-
-export * from './Pages/Pages';
-export * from './Menu/Menu';
+export * from './Pages/About';
+export * from './Pages/Home';
+export * from './Pages/Inventory';
+export * from './Pages/NewItem';
+export * from './Pages/SetUp';

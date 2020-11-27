@@ -1,8 +1,8 @@
 import React from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
-import { Menu } from './Menu/Menu';
-import { Home, NewItem, SetUp, Inventory, About } from './Pages/Pages';
+import { Menu } from './Menu';
+import { Home, NewItem, SetUp, Inventory, About } from './index';
 
 export const App = () => {
   return (
