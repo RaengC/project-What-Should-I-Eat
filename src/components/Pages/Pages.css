@@ -1,0 +1,16 @@
+/* ====(Page Template)==== */
+
+.page-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* use of var for global color */
+
+.page-title {
+    color: var(--main);
+    font-size: 5rem;
+}
+
