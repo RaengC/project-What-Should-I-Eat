@@ -5,8 +5,8 @@ import './Pages.css'
 
 export function NewItem(props) {
     const [name, setName] = useState("");
-    const [location, setLocation] = useState("");
     const [category, setCategory] = useState("");
+    const [location, setLocation] = useState("");
     const [amount, setAmount] = useState("");
     const [expiry, setExpiry] = useState("");
 
@@ -33,11 +33,37 @@ export function NewItem(props) {
                         <input 
                             type="text"
                             placeholder="Enter item name"
+                            required
                             value={name}
                             onChange={e => setName(e.target.value)} 
                         />
                   
                     </div>
+
+                    <div className="form-row">
+                        <label
+                            for="category"
+                            className="form-label"
+                            >
+                            Category
+                        </label>
+                    </div>
+                    <select 
+                        id="food-category" 
+                        name="food-category"
+                        required
+                        onChange={e => setCategory(e.target.value)}>
+                            <option 
+                                value={category}
+                                onSubmit={handleSubmit}
+                                > Select your category
+                            </option>
+                            <option value="fresh">Fresh/Room Temperature</option>
+                            <option value="refrigerated"> Refrigerated</option>
+                            <option value="frozen">Frozen</option>
+                            <option value="pantry-items"> Pantry Items/Dry Goods</option>
+                            
+                    </select>
 
                     <div className="form-row">
                         <lable 
@@ -47,35 +73,12 @@ export function NewItem(props) {
                         </lable>         
                         <input 
                             type="text"
-                            placeholder="Enter the items location"
+                            placeholder="Enter location e.g. kitchen fridge, top shelf"
+                            required
                             value={location}
                             onChange={e => setLocation(e.target.value)} 
                         />
-                    </div>
-                
-                {/* TO DO: fix drop down to pass state... also to have placeholder to pick dropdown */}
-                    <div className="form-row">
-                        <label
-                            for="category"
-                            className="form-label"
-                            >
-                            Food Category
-                        </label>
-                        </div>
-                        <select 
-                            id="food-category" 
-                            name="food-category"
-                            onChange={e => setCategory(e.target.value)}>
-                            <option 
-                                value={category}
-                                onSubmit={handleSubmit}
-                                >
-                            </option>
-                            <option value="refrigerated"> Refrigerated</option>
-                            <option value="pantry-items"> Pantry Items/Dry Goods</option>
-                            <option value="frozen">Frozen</option>
-                        </select>
-               
+                    </div>               
                     
                     <div className="form-row">
                         <lable 
@@ -86,20 +89,23 @@ export function NewItem(props) {
                         </lable>         
                         <input 
                             type="text"
-                            placeholder="Enter the size/volume of your item"
+                            placeholder="Enter the size/volume of your item e.g. 1 bunch, 400gm, single chicken breast."
+                            required
                             value={amount}
                             onChange={e => setAmount(e.target.value)} 
                         />
                     </div>
                 
+                {/* TODO: add placeholder for date, tried in ItemExpiry but not workign there either, docs say it should! */}
                     <div className="form-row">
                         <lable 
-                            onSubmit={handleSubmit}
-                            className="form-label">
-                        Expiry Date:    
+                            onSubmit={handleSubmit} 
+                            className="form-label" >
+                        Select Expiry Date:    
                         </lable>    
                         <ItemExpiry 
-                            onChange={date => setExpiry(date)}/>     
+                            value={expiry}
+                            onChange={date => setExpiry(date)} />     
                     </div>
 
                 <input 
@@ -107,9 +113,7 @@ export function NewItem(props) {
                     className="submit-btn"
                     value="Submit"/>
                 </form>
-                
             </div>
-            
         </Fragment>
     );
 }
