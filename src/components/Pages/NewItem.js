@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from 'react';
+
+import { ItemExpiry } from './ItemExpiry';
 import './Pages.css'
 
 export function NewItem(props) {
@@ -11,11 +13,6 @@ export function NewItem(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert(`Submitting Name ${name}`);
-        props.submitHandler({
-            category
-        }).then(() => {
-
-        })
     } 
 
     return (
@@ -60,16 +57,19 @@ export function NewItem(props) {
                     <div className="form-row">
                         <label
                             for="category"
-                            className="form-label">
+                            className="form-label"
+                            >
                             Food Category
                         </label>
                         </div>
-                        <select id="food-category" name="food-category">
+                        <select 
+                            id="food-category" 
+                            name="food-category"
+                            onChange={e => setCategory(e.target.value)}>
                             <option 
                                 value={category}
                                 onSubmit={handleSubmit}
-                                onChange={e => setCategory(e.target.value)
-                                }>This needs to be a placeholder, not a selection!
+                                >
                             </option>
                             <option value="refrigerated"> Refrigerated</option>
                             <option value="pantry-items"> Pantry Items/Dry Goods</option>
@@ -78,28 +78,34 @@ export function NewItem(props) {
                
                     
                     <div className="form-row">
-                        <lable onSubmit={handleSubmit}>
+                        <lable 
+                            onSubmit={handleSubmit}
+                            className="form-label"
+                            >
                             Amount/Volume:   
                         </lable>         
                         <input 
                             type="text"
+                            placeholder="Enter the size/volume of your item"
                             value={amount}
                             onChange={e => setAmount(e.target.value)} 
                         />
                     </div>
                 
                     <div className="form-row">
-                        <lable onSubmit={handleSubmit}>
+                        <lable 
+                            onSubmit={handleSubmit}
+                            className="form-label">
                         Expiry Date:    
-                        </lable>         
-                        <input 
-                            type="text"
-                            value={expiry}
-                            onChange={e => setExpiry(e.target.value)} 
-                        />
+                        </lable>    
+                        <ItemExpiry 
+                            onChange={date => setExpiry(date)}/>     
                     </div>
 
-                <input type="submit" value="Submit"/>
+                <input 
+                    type="submit" 
+                    className="submit-btn"
+                    value="Submit"/>
                 </form>
                 
             </div>

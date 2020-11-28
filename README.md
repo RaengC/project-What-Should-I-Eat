@@ -3,3 +3,4 @@
 ## Dependencies
 
 * react-router-dom
+* react-datepicker
