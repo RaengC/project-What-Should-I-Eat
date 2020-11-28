@@ -12,5 +12,5 @@ export const ItemExpiry = (props) => {
             selected={startDate} 
             onChange={props.onChange} 
             />
-    )
-}
+    );
+};

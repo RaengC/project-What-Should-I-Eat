@@ -1,3 +1,4 @@
+/* (Nav configeration to allow sliding menu) */
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +25,7 @@ code {
     monospace;
 }
 
-/* (Root color for Nav) */
+/* (Root color for Site/Nav) */
 :root {
   --main: rgb(19, 56, 166);
 }
