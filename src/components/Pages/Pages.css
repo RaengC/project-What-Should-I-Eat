@@ -12,7 +12,6 @@
 .page-title {
     color: var(--main);
     font-size: 2rem;
-
     padding: 1rem;
 }
 
@@ -43,5 +42,5 @@ input[type=text], select, textarea {
     color: #fff;
     padding: 12px;
     border-radius: 4px;
-    
+    font-size: 20px;
 }
