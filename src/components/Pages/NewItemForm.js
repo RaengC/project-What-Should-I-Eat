@@ -7,23 +7,23 @@ import './Pages.css'
 export const NewItemForm = (props) => {
 
     // passing props to try to get local storage working, but it doesnt show in state! 
-    const [name, setName] = useLocalStorage(props.name);
+    const [name, setName] = useLocalStorage('name', "");
 
-    const [category, setCategory] = useState('');
-    const [location, setLocation] = useState('');
-    const [amount, setAmount] = useState('');
-    const [expiry, setExpiry] = useState('');
+    const [category, setCategory] = useLocalStorage('category', '');
+    const [location, setLocation] = useLocalStorage('location', '');
+    const [amount, setAmount] = useLocalStorage('amount','');
+    const [expiry, setExpiry] = useLocalStorage('expiry','');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(name, category, location, amount, expiry);
 
-        // doenst save in local unless have this, but then it sets value as last one permanently! 
-        props.submitHandler({
-            name
-        }).then(() => {
+        // this needs to be called from Container.js (the addItem() function)
+        // props.addItem({
+        //     name
+        // }).then(() => {
 
-        })
+        // })
 
         // clear form on submit
         setName('')
@@ -33,7 +33,7 @@ export const NewItemForm = (props) => {
         setExpiry('')
     }; 
 
-    // this is not working, 
+    // Local Storage.  
     function useLocalStorage(key, initialValue) {
         const [storedValue, setStoredValue] = useState(() => {
             try {
@@ -60,10 +60,6 @@ export const NewItemForm = (props) => {
 
     return (
         <Fragment>
-            <div className="page-container">
-                <h1 className="page-title">New Item </h1>
-            </div>
-
             <form onSubmit={handleSubmit} className="container">
                 <div className="form-row">
                     <lable className="form-label"> Item Name: </lable>         
@@ -74,7 +70,6 @@ export const NewItemForm = (props) => {
                             value={name}
                             onChange={e => setName(e.target.value)} 
                         />
-                  
                 </div>
 
                 <div className="form-row">
@@ -93,8 +88,7 @@ export const NewItemForm = (props) => {
                         <option value="fresh">Fresh/Room Temperature</option>
                         <option value="refrigerated"> Refrigerated</option>
                         <option value="frozen">Frozen</option>
-                        <option value="pantry-items"> Pantry Items/Dry Goods</option>
-                        
+                        <option value="pantry-items"> Pantry Items/Dry Goods</option>   
                 </select>
 
                 <div className="form-row">
@@ -126,10 +120,10 @@ export const NewItemForm = (props) => {
                         value={expiry}
                         onChange={date => setExpiry(date)} />     
                 </div>
-
                 <input type="submit" 
                     className="submit-btn"
-                    value="Submit"/>
+                    value="Submit"
+                />
             </form>
         </Fragment>
     );
