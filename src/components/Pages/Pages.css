@@ -7,6 +7,12 @@
     align-items: center;
 }
 
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 35px;
+    font-size: 20px;
+}
 /* use of var for global color */
 
 .page-title {
@@ -16,12 +22,7 @@
 }
 
 /* ====(NewItem.js - Form CSS)==== */
-.form-container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    font-size: 20px;
-}
+
 
 input[type=text], select, textarea {
     width: 100%;
@@ -43,4 +44,7 @@ input[type=text], select, textarea {
     padding: 12px;
     border-radius: 4px;
     font-size: 20px;
+    margin: 15px 0;
 }
+
+/* ====(Home.js)==== */

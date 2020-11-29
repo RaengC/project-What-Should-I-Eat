@@ -3,23 +3,60 @@ import React, { Fragment, useState } from 'react';
 import { ItemExpiry } from './ItemExpiry';
 import './Pages.css'
 
-export function NewItem(props) {
-    const [name, setName] = useState('');
+
+export const NewItemForm = (props) => {
+
+    // passing props to try to get local storage working, but it doesnt show in state! 
+    const [name, setName] = useLocalStorage(props.name);
+
     const [category, setCategory] = useState('');
     const [location, setLocation] = useState('');
     const [amount, setAmount] = useState('');
     const [expiry, setExpiry] = useState('');
 
-const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log(name, category, location, amount, expiry);
-        
+
+        // doenst save in local unless have this, but then it sets value as last one permanently! 
+        props.submitHandler({
+            name
+        }).then(() => {
+
+        })
+
+        // clear form on submit
         setName('')
         setCategory('')
         setLocation('')
         setAmount('')
         setExpiry('')
-    } 
+    }; 
+
+    // this is not working, 
+    function useLocalStorage(key, initialValue) {
+        const [storedValue, setStoredValue] = useState(() => {
+            try {
+                const item = window.localStorage.getItem(key);
+                return item ? JSON.parse(item) : initialValue;
+            } catch (error) {
+                console.log(error);
+                return initialValue;
+            }
+        });
+
+        const setValue = value => {
+            try {
+                const valueToStore =
+                value instanceof Function ? value(storedValue) : value;
+                setStoredValue(valueToStore);
+                window.localStorage.setItem(key, JSON.stringify(valueToStore));
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        return [storedValue, setValue];
+    }
 
     return (
         <Fragment>
@@ -27,7 +64,7 @@ const handleSubmit = (e) => {
                 <h1 className="page-title">New Item </h1>
             </div>
 
-            <form onSubmit={handleSubmit} className="form-container">
+            <form onSubmit={handleSubmit} className="container">
                 <div className="form-row">
                     <lable className="form-label"> Item Name: </lable>         
                         <input 
