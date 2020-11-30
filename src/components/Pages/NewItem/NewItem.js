@@ -3,7 +3,7 @@ import { NewItemForm } from './NewItemForm';
 
 import '../Pages.css'
 
- // Local Storage. TODO make DRY (this function also in NewItemForm)
+ // Local Storage. TODO: make DRY (this function also in NewItemForm)
  function useLocalStorage(key, initialValue) {
     const [storedValue, setStoredValue] = useState(() => {
         try {
@@ -31,18 +31,20 @@ import '../Pages.css'
 export const NewItem = () => {
     const [items, setItems] = useLocalStorage('items', '')
 
-    const addItem =(item) => {
+    // push item object into an array. 
+    const addItem = (item) => {
         setItems([...items, item])
     }
-        return (
-            <Fragment>
-                <div className="page-container">
-                    <h1 className="page-title">New Item </h1>
-                </div>
-                
-                <NewItemForm onSubmit={ addItem } />
-            </Fragment>
-        )
+
+    return (
+        <Fragment>
+            <div className="page-container">
+                <h1 className="page-title">New Item </h1>
+            </div>
+            
+            <NewItemForm onSubmit={ addItem } />
+        </Fragment>
+    )
 
 }
 

@@ -19,7 +19,6 @@
 * Add date picker/calendar.
 
 # Technology Used
-
 * React
 * Local Storage
 

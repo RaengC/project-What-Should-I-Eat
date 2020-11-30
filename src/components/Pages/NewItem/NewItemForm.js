@@ -15,8 +15,7 @@ export const NewItemForm = (props) => {
         e.preventDefault();
         console.log(name, category, location, amount, expiry);
 
-        // this needs to be called from Container.js (the addItem() function)
-        // pass an object with all collected data. 
+        // Passed to parent, NewItem to store as object in local storage array. 
         props.onSubmit({
             name, 
             category, 
@@ -25,7 +24,7 @@ export const NewItemForm = (props) => {
             expiry
         })
 
-        // Clear form on submit
+        // Clears form on submit
         setName('')
         setCategory('')
         setLocation('')
@@ -33,7 +32,7 @@ export const NewItemForm = (props) => {
         setExpiry('')
     }; 
 
-    // Local Storage.  
+    // Local Storage 
     function useLocalStorage(key, initialValue) {
         const [storedValue, setStoredValue] = useState(() => {
             try {
