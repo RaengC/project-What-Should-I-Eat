@@ -1,14 +1,11 @@
 import React, { Fragment, useState } from 'react';
 
 import { ItemExpiry } from './ItemExpiry';
-import './Pages.css'
 
 
 export const NewItemForm = (props) => {
 
-    // passing props to try to get local storage working, but it doesnt show in state! 
-    const [name, setName] = useLocalStorage('name', "");
-
+    const [name, setName] = useLocalStorage('name', '');
     const [category, setCategory] = useLocalStorage('category', '');
     const [location, setLocation] = useLocalStorage('location', '');
     const [amount, setAmount] = useLocalStorage('amount','');
@@ -19,13 +16,16 @@ export const NewItemForm = (props) => {
         console.log(name, category, location, amount, expiry);
 
         // this needs to be called from Container.js (the addItem() function)
-        // props.addItem({
-        //     name
-        // }).then(() => {
+        // pass an object with all collected data. 
+        props.onSubmit({
+            name, 
+            category, 
+            location,
+            amount,
+            expiry
+        })
 
-        // })
-
-        // clear form on submit
+        // Clear form on submit
         setName('')
         setCategory('')
         setLocation('')
