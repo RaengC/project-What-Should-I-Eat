@@ -45,3 +45,17 @@ input[type=text], select, textarea {
     font-size: 20px;
     margin: 15px 0;
 }
+
+
+/* ====(Inventory.js)==== */
+.table {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 960px;
+}
+
+.table-header {
+    background-color: grey;
+}
