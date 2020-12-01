@@ -85,7 +85,7 @@ export const NewItemForm = (props) => {
                             > Select your category
                         </option>
                         <option value="Fresh">Fresh/Room Temperature</option>
-                        <option value="Refrigerated"> Refrigerated</option>
+                        <option value="Fridge"> Refrigerated</option>
                         <option value="Frozen">Frozen</option>
                         <option value="Pantry"> Pantry Items/Dry Goods</option>   
                 </select>

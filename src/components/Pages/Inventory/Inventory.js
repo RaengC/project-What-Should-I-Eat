@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useMemo } from 'react';
+import Moment from 'moment';
 
 import '../Pages.css'
 
@@ -72,20 +73,23 @@ export const Inventory = (props) => {
                 </thead>
                 <tbody>
                     {sortedItems.map((item) => {
+                        console.log('items', item)
+                        // Change date format for display
+                        const date = Moment(item.expiry).format('Do MMM YY')
+                        console.log(date)
                         return (
                             <tr key={item.expiry}>
                                 <th>{item.name}</th>
                                 <th>{item.category}</th>
                                 <th>{item.location}</th>
                                 <th>{item.amount}</th>
-                                <th>{item.expiry}</th>
+                                <th>{date}</th>
                             </tr>
                         )
                     })}
                 </tbody>
             </table>
             </div>
-
         </Fragment>
     );
 }

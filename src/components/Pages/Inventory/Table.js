@@ -1,47 +1,33 @@
-import React, {useMemo} from 'react'
-// import styled from 'styled-components'
-import { useTable, useSortBy } from 'react-table'
+import React, {useState, useMemo} from 'react';
 
-// const data = useMemo(() => items); 
+export const useSortableData = (items, config = {}) => {
+    const [sortConfig, setSortConfig] = useState(config);
 
-// const columns = useMemo( () => [
-//     {
-//         Header: 'Name', 
-//         accessor: 'name',
-//     },
-//     {
-//         Header: 'Category', 
-//         accessor: 'category',
-//     },
-//     {
-//         Header: 'Location', 
-//         accessor: 'location',
-//     },
-//     {
-//         Header: 'Amount',
-//         accessor: 'amount',
-//     },
-//     {
-//         Header: 'Expiry', 
-//         accessor: 'expiry'
-//     },
-// ])
+    const sortedItems = useMemo( () => {
+        let sortedItems = [...items];
+       console.log('string',sortConfig)
+        if (sortConfig !== null) {
+            sortedItems.sort((a, b) => {
+                if (a[sortConfig.key] < b[sortConfig.key]) {
+                    return sortConfig.direction === 'ascending' ? -1 : 1;
+                }
+                if (a[sortConfig.key] > b[sortConfig.key]) {
+                    return sortConfig.direction === 'ascending' ? 1 : -1;
+                }
+                return 0;
+            });
+        }
+        return sortedItems;
+    }, [items, sortConfig]);
 
-function Table({ columns, data}) {
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = useTable({columns, data})
+    const requestSort = (key) => {
+        let direction = 'ascending';
+        if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+    };
 
-    return (
-        <table > 
-
-        </table>
-    )
+    return { items: sortedItems, requestSort};
 }
 
-
-export default Table;
