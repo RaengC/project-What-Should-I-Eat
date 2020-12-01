@@ -44,18 +44,30 @@ input[type=text], select, textarea {
     border-radius: 4px;
     font-size: 20px;
     margin: 15px 0;
+    text-decoration: none;
 }
 
 
 /* ====(Inventory.js)==== */
-.table {
-    border: 1px solid black;
+/* .table {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 960px;
+    margin: 20px;
+} */
+
+.table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 2px;
+    font-size: 16px;
 }
 
 .table-header {
     background-color: grey;
+}
+
+/* ====(Home)==== */
+.home-parag {
+    margin: 0 0 2em;
 }

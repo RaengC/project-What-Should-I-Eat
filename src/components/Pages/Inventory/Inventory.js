@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
-import DatePicker from 'react-datepicker';
+import Table from './Table'
 
 import '../Pages.css'
-
 
 export const Inventory = (props) => {
 
@@ -13,11 +12,9 @@ export const Inventory = (props) => {
             <div className="page-container">
                 <h1 className="page-title">Pantry Inventory</h1>
             </div>
-            <div className="container">list table coming soon of all items, make sure has sorting capacity</div>
-
-            {/* <div>
-                {props.items.map( (s) => ( <p key={s.id}>Name:{s.name}</p>))}
-            </div> */}
+            <div className="container">
+                <p>list table coming soon of all items, make sure has sorting capacity</p>
+                
             <table className="table">
                 <thead className="table-header">
                     <tr>
@@ -30,6 +27,7 @@ export const Inventory = (props) => {
                 </thead>
                 <tbody>
                     {props.items.map((item) => {
+                     
                         return (
                             <tr key={item._id}>
                                 <th>{item.name}</th>
@@ -42,6 +40,8 @@ export const Inventory = (props) => {
                     })}
                 </tbody>
             </table>
+            </div>
+  
 
         </Fragment>
     );

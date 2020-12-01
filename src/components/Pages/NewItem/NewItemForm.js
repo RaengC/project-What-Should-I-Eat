@@ -84,10 +84,10 @@ export const NewItemForm = (props) => {
                             value={category}
                             > Select your category
                         </option>
-                        <option value="fresh">Fresh/Room Temperature</option>
-                        <option value="refrigerated"> Refrigerated</option>
-                        <option value="frozen">Frozen</option>
-                        <option value="pantry-items"> Pantry Items/Dry Goods</option>   
+                        <option value="Fresh">Fresh/Room Temperature</option>
+                        <option value="Refrigerated"> Refrigerated</option>
+                        <option value="Frozen">Frozen</option>
+                        <option value="Pantry"> Pantry Items/Dry Goods</option>   
                 </select>
 
                 <div className="form-row">

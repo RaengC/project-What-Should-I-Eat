@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import { Menu } from './Menu';
-import { Home, NewItem, SetUp, Inventory, About } from './index';
+import { Home, NewItem, SetUp, Inventory, About, FindFood } from './index';
 
 
 export const App = () => {
@@ -21,6 +21,7 @@ export const App = () => {
         <Route path='/setup' component={SetUp} />
         <Route path='/inventory' component={ () => <Inventory items={items}/>} />
         <Route path='/about' component={About} />
+        <Route path='/findfood' component={ () => <FindFood items={items} />} />
       </Switch>
     </HashRouter>
   );

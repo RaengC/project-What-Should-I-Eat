@@ -1,5 +1,6 @@
 # What Should I Eat? App
 
+Live Link (HERE)[unhealthy-paste.surge.sh]
 ## User Stories
 * A freezer/fridge/pantry inventory app. Where you can add items (in portions), set a “use by” date, remove portions, filter/sort/search and get notifications when things are close to expiring.
 * To solve the issue of waste, overspending,  and to assist with portion sizing. 
@@ -25,4 +26,4 @@
 ## Dependencies
 * react-router-dom
 * react-datepicker
-* table
+* react-table
