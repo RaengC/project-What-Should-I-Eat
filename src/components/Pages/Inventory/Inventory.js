@@ -1,15 +1,15 @@
 import React, { Fragment, useState, useMemo } from 'react';
-import Table from './Table'
 
 import '../Pages.css'
 
 export const Inventory = (props) => {
     const { items } = props;
-    const [sortConfig, setSortConfig] = useState(null);
+    const [sortConfig, setSortConfig] = useState({});
     
-    useMemo( () => {
+    // need to pass useMemo function to display the change on the DOM
+    const sortedItems = useMemo( () => {
         let sortedItems = [...items];
-       
+       console.log('string',sortConfig)
         if (sortConfig !== null) {
             sortedItems.sort((a, b) => {
                 if (a[sortConfig.key] < b[sortConfig.key]) {
@@ -71,10 +71,9 @@ export const Inventory = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {items.map(item => {
+                    {sortedItems.map((item) => {
                         return (
-                            // my objects dont have an item ID ... the orginal code may have to be changed so I can then sort! 
-                            <tr key={item.id}>
+                            <tr key={item.expiry}>
                                 <th>{item.name}</th>
                                 <th>{item.category}</th>
                                 <th>{item.location}</th>
