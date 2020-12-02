@@ -17,6 +17,7 @@ export const NewItemForm = (props) => {
 
         // Passed to parent, NewItem to store as object in local storage array. 
         props.onSubmit({
+            id: Math.random(),
             name, 
             category, 
             location,
