@@ -11,6 +11,7 @@ export const FindFood = (props) => {
     // need to pass useMemo function to display the change on the DOM
     const sortedItems = useMemo( () => {
         let sortedItems = [...items];
+        console.log(sortedItems)
        
         if (sortConfig !== null) {
             sortedItems.sort((a, b) => {
