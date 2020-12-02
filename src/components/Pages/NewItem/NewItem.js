@@ -28,6 +28,8 @@ import '../Pages.css'
     return [storedValue, setValue];
 }
 
+
+
 export const NewItem = () => {
     const [items, setItems] = useLocalStorage('items', '')
 

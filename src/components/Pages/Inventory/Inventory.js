@@ -34,7 +34,7 @@ export const Inventory = (props) => {
         setSortConfig({ key, direction });
     };
 
-    const deleteHandler = async (id) => {
+    const deleteHandler = (id) => {
         // Filter through props 'items' array, to find ID clicked
         const updateStorage = items.filter(item => item.id !== id);
         console.log('updateStorage', updateStorage) //removes item clicked, consoles new array!!

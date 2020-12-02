@@ -81,9 +81,8 @@ export const NewItemForm = (props) => {
                     required
                     value={category}
                     onChange={e => setCategory(e.target.value)}>
-                        <option 
-                            value={category}
-                            > Select your category
+                        <option value={category}> 
+                            Select your category
                         </option>
                         <option value="Fresh">Fresh/Room Temperature</option>
                         <option value="Fridge"> Refrigerated</option>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Menu } from './Menu';
 import { Home, NewItem, SetUp, Inventory, About, FindFood, Edit } from './index';
@@ -19,7 +19,9 @@ export const App = () => {
         <Route exact path='/' component={() => <Home items={items}/>} />
         <Route path='/new' component={NewItem} />
         <Route path='/setup' component={SetUp} />
-        <Route path='/inventory' component={ () => <Inventory items={items}/>} />
+        <Route path='/inventory' component={ () => <Inventory items={items}/>}>
+          {/* {items ? <Inventory /> : <Redirect to={'/setup'} />} */}
+          </Route>
         <Route path='/about' component={About} />
         <Route path='/findfood' component={ () => <FindFood items={items} />} />
         <Route path='/edit/:id' component={Edit}/>
