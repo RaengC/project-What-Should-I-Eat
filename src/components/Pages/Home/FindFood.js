@@ -11,19 +11,18 @@ export const FindFood = (props) => {
     // need to pass useMemo function to display the change on the DOM
     const sortedItems = useMemo( () => {
         let sortedItems = [...items];
-        console.log(sortedItems)
        
-        // if (sortConfig !== null) {
-        //     sortedItems.sort((a, b) => {
-        //         if (a[sortConfig.key] < b[sortConfig.key]) {
-        //             return sortConfig.direction === 'ascending' ? -1 : 1;
-        //         }
-        //         if (a[sortConfig.key] > b[sortConfig.key]) {
-        //             return sortConfig.direction === 'ascending' ? 1 : -1;
-        //         }
-        //         return 0;
-        //     });
-        // }
+        if (sortConfig !== null) {
+            sortedItems.sort((a, b) => {
+                if (a[sortConfig.key] < b[sortConfig.key]) {
+                    return sortConfig.direction === 'ascending' ? -1 : 1;
+                }
+                if (a[sortConfig.key] > b[sortConfig.key]) {
+                    return sortConfig.direction === 'ascending' ? 1 : -1;
+                }
+                return 0;
+            });
+        }
         return sortedItems;
     }, [items, sortConfig]);
     
@@ -41,48 +40,18 @@ export const FindFood = (props) => {
                 <h1 className="page-title">Food To Eat</h1>
             </div>
             <div className="container">
-                <p>Items sorted by expiry</p>
+                <p>Items sorted by clicking expiry</p>
                 
             <table className="table">
                 <thead className="table-header">
                     <tr>
-                        <th>
-                        Name
-                            {/* <button 
-                                type="button" 
-                                // onClick={ () => requestSort('name')}
-                                >
-                            Name 
-                            </button> */}
-                        </th>
-                        <th> Category
-                            {/* <button 
-                                type="button" 
-                                // onClick={ () => requestSort('category')}
-                                >
-                            Category 
-                            </button> */}
-                        </th>
-                        <th> Location
-                            {/* <button type="button" 
-                            // onClick={ () => requestSort('location')}
-                            >
-                            Location 
-                            </button> */}
-                        </th>
-                        <th> Amount
-                            {/* <button type="button" 
-                            // onClick={ () => requestSort('amount')}
-                            >
-                            Amount 
-                            </button> */}
-                        </th>
-                        <th>Expiry
-                            <button type="button" 
+                        <th> Name </th>
+                        <th> Category </th>
+                        <th> Location </th>
+                        <th> Amount </th>
+                        <th type="button" 
                             onClick={ () => requestSort('expiry')}
-                            >
-                            Expiry 
-                            </button>
+                            >Expiry
                         </th>
                     </tr>
                 </thead>

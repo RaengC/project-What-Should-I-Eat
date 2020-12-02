@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
-import { ItemExpiry } from './ItemExpiry';
+import ItemExpiry from './ItemExpiry';
 
 
 export const NewItemForm = (props) => {

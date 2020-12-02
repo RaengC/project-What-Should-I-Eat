@@ -49,22 +49,27 @@ input[type=text], select, textarea {
 
 
 /* ====(Inventory.js)==== */
-/* .table {
+.table {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px;
-} */
+    flex-wrap: wrap;
+    font-size: 14px;
+}
 
 .table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 2px;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 .table-header {
-    background-color: grey;
+    background-color: var(--main);
+    color: #fff
+}
+
+.header-btn {
+    background-color: var(--main);
+    color: #fff;
 }
 
 /* ====(Home)==== */

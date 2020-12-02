@@ -35,13 +35,20 @@ export const Inventory = (props) => {
     };
 
     const deleteHandler = (id) => {
-        // Filter through props 'items' array, to find ID clicked
-        const updateStorage = items.filter(item => item.id !== id);
-        console.log('updateStorage', updateStorage) //removes item clicked, consoles new array!!
-        
-        // Delete orginal local storage and replace with above
-        const deletedItem = localStorage.setItem('items', JSON.stringify(updateStorage));
-        console.log(deletedItem)
+        // pop up to confirm if want to delete
+        if (window.confirm('Are you sure you wish to delete this item?')) {
+            // Filter through props 'items' array, to find ID clicked
+            const updateStorage = items.filter(item => item.id !== id);
+            console.log('updateStorage', updateStorage) //removes item clicked, consoles new array!!
+
+            // Delete orginal local storage and replace with above
+            const deletedItem = localStorage.setItem('items', JSON.stringify(updateStorage));
+            console.log(deletedItem);
+        } else {
+
+        }
+       
+            
     }
 
     return (
@@ -50,44 +57,40 @@ export const Inventory = (props) => {
                 <h1 className="page-title">Pantry Inventory</h1>
             </div>
             <div className="container">
-                <p>Sort by any value.</p>
+                <p>Sort by any value in header.</p>
+                <p>Click on any line to delete an item.</p>
                 <br></br>
             <table className="table">
                 <thead className="table-header">
                     <tr>
-                        <th>
-                            <button 
-                                type="button" 
-                                onClick={ () => requestSort('name')}
-                                >
-                            Name 
-                            </button>
+                        <th onClick={ () => requestSort('name')}
+                            type="button" 
+                            className="header-btn">
+                            Name
                         </th>
-                        <th>
-                            <button type="button" onClick={ () => requestSort('category')}>
-                            Category 
-                            </button>
+                        <th 
+                            type="button" 
+                            className="header-btn"
+                            onClick={ () => requestSort('category')}>
+                            Category
                         </th>
-                        <th>
-                            <button type="button" onClick={ () => requestSort('location')}>
-                            Location 
-                            </button>
+                        <th 
+                            type="button" 
+                            className="header-btn"
+                            onClick={ () => requestSort('location')}>
+                            Location
                         </th>
-                        <th>
-                            <button type="button" onClick={ () => requestSort('amount')}>
-                            Amount 
-                            </button>
+                        <th 
+                            type="button" 
+                            className="header-btn"
+                            onClick={ () => requestSort('amount')}>
+                            Amount
                         </th>
-                        <th>
-                            <button type="button" onClick={ () => requestSort('expiry')}>
-                            Expiry 
-                            </button>
-                        </th>
-                        <th>
-                            Edit
-                        </th>
-                        <th>
-                            Delete
+                        <th
+                            type="button" 
+                            className="header-btn"
+                            onClick={ () => requestSort('expiry')}>
+                            Expiry
                         </th>
                     </tr>
                 </thead>
@@ -98,19 +101,20 @@ export const Inventory = (props) => {
                         const date = Moment(item.expiry).format('Do MMM YY')
                         // console.log(date)
                         return (
-                            <tr key={item.id}>
+                            <tr key={item.id}
+                            onClick={() => deleteHandler(item.id)}>
                                 <th>{item.name}</th>
                                 <th>{item.category}</th>
                                 <th>{item.location}</th>
                                 <th>{item.amount}</th>
                                 <th>{date}</th>
-                                <th><Link to={`/edit/${item}`} >Edit</Link></th>
-                                <th>
+                                {/* <th><Link to={`/edit/${item}`} >Edit</Link></th> */}
+                                {/* <th>
                                     <button 
                                     onClick={() => deleteHandler(item.id)}
                                     >
                                     Delete</button>
-                                </th>
+                                </th> */}
                             </tr>
                         )
                     })}
