@@ -12,9 +12,9 @@ const NavBar = ({ onClick, toggle }) => {
                     <NavLink onClick={onClick} to='/new' >
                         Add New Item
                     </NavLink>
-                    <NavLink onClick={onClick} to='/setup' >
+                    {/* <NavLink onClick={onClick} to='/setup' >
                     Configure Pantry
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink onClick={onClick} to='/inventory' >
                         Pantry Inventory
                     </NavLink>

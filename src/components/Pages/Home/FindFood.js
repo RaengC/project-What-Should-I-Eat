@@ -37,10 +37,10 @@ export const FindFood = (props) => {
     return (
         <Fragment>
             <div className="page-container">
-                <h1 className="page-title">Pantry Inventory</h1>
+                <h1 className="page-title">Food To Eat</h1>
             </div>
             <div className="container">
-                <p>list table coming soon of all items, make sure has sorting capacity</p>
+                <p>Items sorted by expiry</p>
                 
             <table className="table">
                 <thead className="table-header">
@@ -86,13 +86,14 @@ export const FindFood = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {sortedItems.map((item) => {
-                        console.log('items', item)
+                    {/* map limited to 10 items, but need to only disply closest to expiry */}
+                    {sortedItems.slice(0, 10).map((item) => {
+                        // console.log('items', item)
                         // Change date format for display
                         const date = Moment(item.expiry).format('Do MMM YY')
-                        console.log(date)
+                        // console.log(date)
                         return (
-                            <tr key={item.expiry}>
+                            <tr key={item.id}>
                                 <th>{item.name}</th>
                                 <th>{item.category}</th>
                                 <th>{item.location}</th>
