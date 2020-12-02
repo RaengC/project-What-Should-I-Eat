@@ -13,17 +13,17 @@ export const FindFood = (props) => {
         let sortedItems = [...items];
         console.log(sortedItems)
        
-        if (sortConfig !== null) {
-            sortedItems.sort((a, b) => {
-                if (a[sortConfig.key] < b[sortConfig.key]) {
-                    return sortConfig.direction === 'ascending' ? -1 : 1;
-                }
-                if (a[sortConfig.key] > b[sortConfig.key]) {
-                    return sortConfig.direction === 'ascending' ? 1 : -1;
-                }
-                return 0;
-            });
-        }
+        // if (sortConfig !== null) {
+        //     sortedItems.sort((a, b) => {
+        //         if (a[sortConfig.key] < b[sortConfig.key]) {
+        //             return sortConfig.direction === 'ascending' ? -1 : 1;
+        //         }
+        //         if (a[sortConfig.key] > b[sortConfig.key]) {
+        //             return sortConfig.direction === 'ascending' ? 1 : -1;
+        //         }
+        //         return 0;
+        //     });
+        // }
         return sortedItems;
     }, [items, sortConfig]);
     

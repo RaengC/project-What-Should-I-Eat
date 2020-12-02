@@ -23,7 +23,7 @@ export const NewItemForm = (props) => {
             location,
             amount,
             expiry
-        })
+        });
 
         // Clears form on submit
         setName('')
