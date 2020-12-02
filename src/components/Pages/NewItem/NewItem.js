@@ -28,15 +28,14 @@ import '../Pages.css'
     return [storedValue, setValue];
 }
 
-
-
 export const NewItem = () => {
     const [items, setItems] = useLocalStorage('items', '')
 
     // push item object into an array. 
     const addItem = (item) => {
         setItems([...items, item])
-    }
+        alert("You have added an item.")
+    };
 
     return (
         <Fragment>
@@ -44,7 +43,9 @@ export const NewItem = () => {
                 <h1 className="page-title">New Item </h1>
             </div>
             
-            <NewItemForm onSubmit={ addItem } />
+            <NewItemForm 
+                onSubmit={ addItem } 
+            />
         </Fragment>
     )
 
