@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
+import DatePicker from 'react-datepicker';
 
-import ItemExpiry from './ItemExpiry';
-
+import 'react-datepicker/dist/react-datepicker.css';
 
 export const NewItemForm = (props) => {
 
@@ -9,7 +9,7 @@ export const NewItemForm = (props) => {
     const [category, setCategory] = useLocalStorage('category', '');
     const [location, setLocation] = useLocalStorage('location', '');
     const [amount, setAmount] = useLocalStorage('amount','');
-    const [expiry, setExpiry] = useLocalStorage('expiry','');
+    const [expiry, setExpiry] = useLocalStorage('expiry', '');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -112,12 +112,14 @@ export const NewItemForm = (props) => {
                     />
                 </div>
                 
-            {/* TODO: add placeholder for date, tried in ItemExpiry but not workign there either, docs say it should! */}
                 <div className="form-row">
                     <lable className="form-label">Select Expiry Date: </lable>    
-                    <ItemExpiry 
-                        value={expiry}
-                        onChange={date => setExpiry(date)} />     
+                    <DatePicker 
+                        dateFormat="dd/MM/yyyy"
+                        selected={expiry} 
+                        onChange={date => setExpiry(date)}
+                        placeholderText="Select a date here"
+                        />
                 </div>
                 <input type="submit" 
                     className="submit-btn"
