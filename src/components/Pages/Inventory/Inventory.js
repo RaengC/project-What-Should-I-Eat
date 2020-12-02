@@ -8,7 +8,6 @@ export const Inventory = (props) => {
     const { items } = props;
  
     const [sortConfig, setSortConfig] = useState({});
-    const [changeItems, setChangeItems] = useState(items)
     
     // need to pass useMemo function to display the change on the DOM
     const sortedItems = useMemo( () => {
@@ -35,26 +34,14 @@ export const Inventory = (props) => {
         setSortConfig({ key, direction });
     };
 
-    
     const deleteHandler = async (id) => {
         // Filter through props 'items' array, to find ID clicked
         const updateStorage = items.filter(item => item.id !== id);
         console.log('updateStorage', updateStorage) //removes item clicked, consoles new array!!
         
-        // Delete orginal local storage and replace with above, need the key 'items', and to pass updatedStorage
-        const deletedItem = localStorage.setItem('items', updateStorage);
+        // Delete orginal local storage and replace with above
+        const deletedItem = localStorage.setItem('items', JSON.stringify(updateStorage));
         console.log(deletedItem)
-
-// filter() find the id of the item you want, then make a new copy to local storage deleting the old one. save all to local storage. 
-
-        // Find item we want from the orignal data with the id. map it.... 
-        // need to check id against object keys to find match. 
-        // then delete the matched id. 
-
-        // newList should update the state which has props passed into it.... 
-        // const newList = changeItems.filter((item) => item.id !== id);
-        // console.log('newlist',newList)
-        // setChangeItems(newList);
     }
 
     return (
