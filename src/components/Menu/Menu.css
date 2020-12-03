@@ -47,12 +47,47 @@
 }
 
 .nav-bar a:hover {
-    background-color: var(--main);
     color: #fff;
 }
 
 .nav-bar a:last-child {
     border: none;
+}
+
+.home-nav:hover {
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ), url('../Images/home-image.jpg');
+    background-size: cover;
+}
+
+.add-item-nav:hover {
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ), url('../Images/add-image.jpg');
+    background-size: cover;
+}
+
+.inventory-nav:hover {
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ), url('../Images/food-still.jpg');
+    background-size: cover;
+}
+
+.about-nav:hover {
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ), url('../Images/about-image.webp');
+    background-size: cover;
 }
 
 /* (MenuButton.js) */
@@ -121,4 +156,11 @@
     left: 0.3rem;
     right: 0.3rem;
     bottom: 0.3rem;
+}
+
+/* ====(Screen Size adjustments)==== */
+@media (min-width: 430px) {
+    .nav-bar a {
+        font-size: 27px;
+    }
 }
