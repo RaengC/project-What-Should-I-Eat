@@ -1,6 +1,6 @@
 # What Should I Eat? App
 
-Live Link [HERE](scattered-bead.surge.sh)
+Live Link [HERE](http://scattered-bead.surge.sh/#/)
 ## User Stories
 * A freezer/fridge/pantry inventory app. Where you can add items (in any format you like), set a “use by” date, remove portions, filter and delete.
 * To solve the issue of waste, overspending,  and to assist with portion sizing. 
