@@ -23,6 +23,8 @@
 
 /* ====(NewItem.js - Form CSS)==== */
 
+
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -30,6 +32,7 @@ input[type=text], select, textarea {
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    font-size: 14px;
 }
 
 .form-label {
@@ -58,6 +61,7 @@ input[type=text], select, textarea {
 .table-body tr:hover {
     background-color: var(--main);
     color: #fff;
+    cursor: pointer;
 }
 
 .table th {
@@ -71,7 +75,7 @@ input[type=text], select, textarea {
     border-collapse: collapse;
 }
 
-.table-header {
+.table-header tr{
     background-color: var(--main);
     color: #fff
 }
@@ -79,6 +83,12 @@ input[type=text], select, textarea {
 .header-btn {
     background-color: var(--main);
     color: #fff;
+}
+
+.header-btn:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: var(--main);
 }
 
 /* ====(Home)==== */
@@ -112,5 +122,12 @@ input[type=text], select, textarea {
     .table th {
         width: 155px;
         padding: 9px 0;
+    }
+    .container {
+        padding: 35px 68px;
+        font-size: 25px;
+    }
+    input[type=text], select, textarea {
+        font-size: 19px;
     }
 }
