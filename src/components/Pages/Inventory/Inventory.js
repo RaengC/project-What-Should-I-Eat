@@ -1,6 +1,5 @@
-import React, { Fragment, useState, useMemo, useEffect } from 'react';
+import React, { Fragment, useState, useMemo } from 'react';
 import Moment from 'moment';
-import { Link } from 'react-router-dom';
 
 import '../Pages.css'
 
@@ -50,9 +49,7 @@ export const Inventory = (props) => {
             // refreshes the page once change confirmed
             window.location.reload()
         } 
-        
-        return   
-        
+        return    
     }
 
 
@@ -63,7 +60,7 @@ export const Inventory = (props) => {
             </div>
             <div className="container">
                 <p>Sort by any value in header.</p>
-                <p>Click on any line to delete an item.</p>
+                <p>To delete click on any item.</p>
                 <br></br>
             <table className="table">
                 <thead className="table-header">
@@ -114,13 +111,7 @@ export const Inventory = (props) => {
                                 <th>{item.location}</th>
                                 <th>{item.amount}</th>
                                 <th>{date}</th>
-                                {/* <th><Link to={`/edit/${item}`} >Edit</Link></th> */}
-                                {/* <th>
-                                    <button 
-                                    onClick={() => deleteHandler(item.id)}
-                                    >
-                                    Delete</button>
-                                </th> */}
+                                
                             </tr>
                         )
                     })}

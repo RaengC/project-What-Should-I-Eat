@@ -4,6 +4,7 @@ import Moment from 'moment';
 import '../Pages.css'
 
 export const FindFood = (props) => {
+    // LocalStorage passed from App.js
     const { items } = props;
     
     // Sorts Items by expiry date for display
@@ -18,13 +19,27 @@ export const FindFood = (props) => {
         return 0;
     });
 
+    const deleteHandler = (id) => {
+        console.log(id)
+        // Filter through props 'items' array, to find ID clicked
+        const updateStorage = items.filter(item => item.id !== id);
+        console.log('updateStorage', updateStorage) //removes item clicked, consoles new array!!
+
+        // Delete orginal local storage and replace with above
+        const deletedItem = localStorage.setItem('items', JSON.stringify(updateStorage));
+        console.log(deletedItem);
+        // refreshes the page once change confirmed
+        window.location.reload()
+        return    
+    }
+
     return (
         <Fragment>
             <div className="page-container">
                 <h1 className="page-title">Food To Eat</h1>
             </div>
             <div className="container">
-                <p>Your top 10 items to eat before expiry are:</p>
+                <p>Your top 10 items to eat before expiry. Click the ✓ button to remove. </p>
                 <br></br>
                 
             <table className="table">
@@ -35,6 +50,7 @@ export const FindFood = (props) => {
                         <th> Location </th>
                         <th> Amount </th>
                         <th>Expiry </th>
+                        <th>Delete </th>
                     </tr>
                 </thead>
                 <tbody className="table-body">
@@ -51,6 +67,14 @@ export const FindFood = (props) => {
                                 <th>{item.location}</th>
                                 <th>{item.amount}</th>
                                 <th>{date}</th>
+                                {/* <th><Link to={`/edit/${item}`} >Edit</Link></th> */}
+                                <th>
+                                    <button 
+                                        className="delete-btn"
+                                        onClick={() => deleteHandler(item.id)}
+                                    >
+                                    ✓</button>
+                                </th>
                             </tr>
                         )
                     })}

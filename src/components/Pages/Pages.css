@@ -1,10 +1,11 @@
 /* ====(All Pages Template)==== */
 
 .page-container {
-    height: 20vh;
+    height: 18vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    align-items: flex-end;
 }
 
 .container {
@@ -27,8 +28,6 @@
 
 /* ====(NewItem.js - Form CSS)==== */
 
-
-
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -44,6 +43,10 @@ input[type=text], select, textarea {
     display: inline-block;
 }
 
+#food-select-btn {
+    font-size: 28px;
+}
+
 .submit-btn {
     background-color: var(--main);
     color: #fff;
@@ -54,8 +57,14 @@ input[type=text], select, textarea {
     text-decoration: none;
     display: flex;
     justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.submit-btn:hover {
+    background-color: #fff;
+    color: var(--main);
+    /* filter: glow(color=#a3a39e,strength=3); */
+}
 
 /* ====(Inventory.js)==== */
 .table {
@@ -98,8 +107,32 @@ input[type=text], select, textarea {
     margin: 0 0 2em;
 }
 
-@media (min-width: 500px) {
+/* ====(Food To Eat page)==== */
 
+.delete-btn {
+    background-color: var(--main);
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.delete-btn:hover {
+    background-color: #fff;
+    color: var(--main);
+}
+
+@media (min-width: 500px) {
+    .page-container {
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #food-select-btn {
+        font-size: 31px;
+    }
 }
 @media (min-width: 640px) {
     .container {
@@ -124,6 +157,11 @@ input[type=text], select, textarea {
     }
     .table th {
         width: 113px;
+    }
+    .delete-btn {
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 20px;
     }
 }
 

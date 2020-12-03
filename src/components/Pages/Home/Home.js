@@ -14,9 +14,10 @@ export const Home = (props) => {
             <h1 className="page-title">What Should I Eat?</h1>
         </div>
         <div className="container">
-            <p className="home-parag">Click the button to find your top foods to Eat before expiry. </p>
+            <p className="home-parag">Add, search and delete items.  </p>
+            <p className="home-parag">Click the button below to find 'What You Should Eat' before expiry. </p>
            
-            <Link to='/findfood' className="submit-btn">Find Food to Eat</Link>
+            <Link to='/findfood' className="submit-btn" id="food-select-btn">Find Food to Eat</Link>
         </div>
 
     </Fragment>
