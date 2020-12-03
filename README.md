@@ -2,12 +2,12 @@
 
 Live Link [HERE](vast-pets.surge.sh)
 ## User Stories
-* A freezer/fridge/pantry inventory app. Where you can add items (in portions), set a “use by” date, remove portions, filter/sort/search and get notifications when things are close to expiring.
+* A freezer/fridge/pantry inventory app. Where you can add items (in any format you like), set a “use by” date, remove portions, filter and delete.
 * To solve the issue of waste, overspending,  and to assist with portion sizing. 
-* So if you have 12 breasts in the freezer, it should say "eat 1 chicken breast this week".
 
 ## Future User Stories
 * As a user, I would like to be able to use this app from any device, so I can not loose my data if I reset my computer. 
+* Be able to activate an alert to users of items close to use by. 
 
 ## Technical Tasks/ Trello Board
 [Trello Board link](https://trello.com/b/evmWHjQg/what-should-i-eat) with associated ToDo/Doing/Done and Technical Tasks.
@@ -26,4 +26,5 @@ Live Link [HERE](vast-pets.surge.sh)
 ## Dependencies
 * react-router-dom
 * react-datepicker
-* react-table
+* moment
+

@@ -162,6 +162,6 @@
 /* ====(Screen Size adjustments)==== */
 @media (min-width: 430px) {
     .nav-bar a {
-        font-size: 27px;
+        font-size: 35px;
     }
 }
