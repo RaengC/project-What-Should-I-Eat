@@ -33,7 +33,7 @@
     padding: 1.5% 0 0 0;
     height: 25%;
     width: 100vw;
-    background-color: white;
+    background-color: #161a11;
     text-transform: uppercase;
     letter-spacing: 4px;
     display: flex;
@@ -42,8 +42,9 @@
     border-bottom: 2px solid var(--main);
     list-style: none;
     text-decoration: none;
-    color: var(--main);
+    color: #fff;
     transition: all 0.2s ease-in;
+    font-size: 21px;
 }
 
 .nav-bar a:hover {
