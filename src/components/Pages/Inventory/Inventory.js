@@ -6,6 +6,7 @@ import '../Pages.css'
 
 export const Inventory = (props) => {
     let { items } = props;
+    // if no items in inventory, set local storage to an empty array 
     if (!items) {
         items = []
     } 
@@ -38,7 +39,6 @@ export const Inventory = (props) => {
 
     const deleteHandler = (id) => {
         // pop up to confirm if want to delete
-       
         if (window.confirm('Are you sure you wish to delete this item?')) {
             // Filter through props 'items' array, to find ID clicked
             const updateStorage = items.filter(item => item.id !== id);
@@ -47,6 +47,8 @@ export const Inventory = (props) => {
             // Delete orginal local storage and replace with above
             const deletedItem = localStorage.setItem('items', JSON.stringify(updateStorage));
             console.log(deletedItem);
+            // refreshes the page once change confirmed
+            window.location.reload()
         } 
         
         return   

@@ -35,7 +35,7 @@ export const NewItem = (props) => {
     const addItem = (item) => {
         setItems([...items, item])
         props.setItems([...items, item])
-        alert("You have added an item.")
+        // alert("You have added an item.")
     };
 
     return (
