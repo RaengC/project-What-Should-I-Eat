@@ -44,11 +44,8 @@ export const Inventory = (props) => {
             // Delete orginal local storage and replace with above
             const deletedItem = localStorage.setItem('items', JSON.stringify(updateStorage));
             console.log(deletedItem);
-        } else {
-
-        }
-       
-            
+        } 
+        return      
     }
 
     return (
@@ -94,15 +91,16 @@ export const Inventory = (props) => {
                         </th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="table-body">
                     {sortedItems.map((item) => {
                         // console.log('items', item)
                         // Change date format for display
                         const date = Moment(item.expiry).format('Do MMM YY')
                         // console.log(date)
                         return (
-                            <tr key={item.id}
-                            onClick={() => deleteHandler(item.id)}>
+                            <tr className="table-row"
+                                key={item.id}
+                                onClick={() => deleteHandler(item.id)}>
                                 <th>{item.name}</th>
                                 <th>{item.category}</th>
                                 <th>{item.location}</th>

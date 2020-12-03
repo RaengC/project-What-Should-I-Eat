@@ -50,16 +50,25 @@ input[type=text], select, textarea {
 
 /* ====(Inventory.js)==== */
 .table {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     font-size: 14px;
 }
 
-.table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+.table-body tr:hover {
+    background-color: var(--main);
+    color: #fff;
+}
+
+.table th {
+    border: 1px solid black; 
+    border-collapse: collapse; 
     padding: 2px;
     /* font-size: 16px; */
+}
+
+.table td {
+    border-collapse: collapse;
 }
 
 .table-header {
@@ -75,4 +84,33 @@ input[type=text], select, textarea {
 /* ====(Home)==== */
 .home-parag {
     margin: 0 0 2em;
+}
+
+@media (min-width: 640px) {
+    .table {
+        display: flex;
+        flex-direction: column;
+        /* display: flex;
+        flex-direction: column; */
+        font-size: 20px;
+    }
+    .table thead {
+        display: flex;
+        justify-content: center;
+    }
+    .table tbody {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .table th {
+        width: 113px;
+    }
+}
+
+@media (min-width: 840px) {
+    .table th {
+        width: 155px;
+        padding: 9px 0;
+    }
 }

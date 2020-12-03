@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import { Menu } from './Menu';
 import { Home, NewItem, SetUp, Inventory, About, FindFood, Edit } from './index';

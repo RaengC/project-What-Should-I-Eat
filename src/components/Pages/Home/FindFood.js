@@ -1,38 +1,22 @@
-import React, { Fragment, useState, useMemo } from "react";
+import React, { Fragment } from "react";
 import Moment from 'moment';
 
 import '../Pages.css'
 
 export const FindFood = (props) => {
     const { items } = props;
- 
-    const [sortConfig, setSortConfig] = useState({});
     
-    // need to pass useMemo function to display the change on the DOM
-    const sortedItems = useMemo( () => {
-        let sortedItems = [...items];
-       
-        if (sortConfig !== null) {
-            sortedItems.sort((a, b) => {
-                if (a[sortConfig.key] < b[sortConfig.key]) {
-                    return sortConfig.direction === 'ascending' ? -1 : 1;
-                }
-                if (a[sortConfig.key] > b[sortConfig.key]) {
-                    return sortConfig.direction === 'ascending' ? 1 : -1;
-                }
-                return 0;
-            });
+    // Sorts Items by expiry date for display
+    let sortedItems = [...items];
+    sortedItems.sort((a, b) => {
+        if (a.expiry < b.expiry) {
+            return -1
         }
-        return sortedItems;
-    }, [items, sortConfig]);
-    
-    const requestSort = (key) => {
-        let direction = 'ascending';
-        if (sortConfig.key === key && sortConfig.direction === 'ascending') {
-            direction = 'descending';
+        if (a.expiry > b.expiry) {
+            return 1
         }
-        setSortConfig({ key, direction });
-    };
+        return 0;
+    });
 
     return (
         <Fragment>
@@ -40,7 +24,7 @@ export const FindFood = (props) => {
                 <h1 className="page-title">Food To Eat</h1>
             </div>
             <div className="container">
-                <p>Items sorted by clicking expiry</p>
+                <p>Your top 10 items to eat before expiry are:</p>
                 
             <table className="table">
                 <thead className="table-header">
@@ -49,21 +33,18 @@ export const FindFood = (props) => {
                         <th> Category </th>
                         <th> Location </th>
                         <th> Amount </th>
-                        <th type="button" 
-                            onClick={ () => requestSort('expiry')}
-                            >Expiry
-                        </th>
+                        <th>Expiry </th>
                     </tr>
                 </thead>
-                <tbody>
-                    {/* map limited to 10 items, but need to only disply closest to expiry */}
+                <tbody className="table-body">
                     {sortedItems.slice(0, 10).map((item) => {
                         // console.log('items', item)
                         // Change date format for display
                         const date = Moment(item.expiry).format('Do MMM YY')
                         // console.log(date)
                         return (
-                            <tr key={item.id}>
+                            <tr className="table-row"
+                                key={item.id}>
                                 <th>{item.name}</th>
                                 <th>{item.category}</th>
                                 <th>{item.location}</th>
