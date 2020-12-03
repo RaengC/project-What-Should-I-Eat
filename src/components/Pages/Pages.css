@@ -1,7 +1,6 @@
 /* ====(All Pages Template)==== */
-
 .page-container {
-    height: 18vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,16 +9,16 @@
 
 .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 35px;
+    background-color: #efefff;
+    padding: 14px;
     font-size: 20px;
 }
-/* use of var for global color */
 
 .container p {
     text-align: center;
 }
 
+/* use of var for global color */
 .page-title {
     color: var(--main);
     font-size: 2rem;
@@ -27,7 +26,6 @@
 }
 
 /* ====(NewItem.js - Form CSS)==== */
-
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -61,20 +59,18 @@ input[type=text], select, textarea {
 }
 
 .submit-btn:hover {
-    background-color: #fff;
-    color: var(--main);
-    /* filter: glow(color=#a3a39e,strength=3); */
+    background-color:#657ec9;
+    font-weight: bold;
 }
 
 /* ====(Inventory.js)==== */
 .table {
     border-collapse: collapse;
-    font-size: 14px;
-    
+    font-size: 13px;   
 }
 
 .table-body tr:hover {
-    background-color: var(--main);
+    background-color:#657ec9;
     color: #fff;
     cursor: pointer;
 }
@@ -82,9 +78,7 @@ input[type=text], select, textarea {
 .table th {
     border-bottom: 2px solid var(--main); 
     padding: 2px;
-    /* font-size: 16px; */
 }
-
 
 .table-header tr{
     background-color: var(--main);
@@ -109,6 +103,10 @@ input[type=text], select, textarea {
 
 /* ====(Food To Eat page)==== */
 
+.table-find {
+    border-collapse: collapse;
+    font-size: 14px; 
+}
 .delete-btn {
     background-color: var(--main);
     color: #fff;
@@ -123,6 +121,23 @@ input[type=text], select, textarea {
     color: var(--main);
 }
 
+/* ====(About Page)==== */
+.about-headers {
+    text-align: center;
+}
+
+.about-link {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ====(Screen Size adjustments)==== */
+@media (min-width: 430px) {
+    .table {
+        font-size: 17px;   
+    }
+}
 @media (min-width: 500px) {
     .page-container {
         height: 20vh;
@@ -133,7 +148,18 @@ input[type=text], select, textarea {
     #food-select-btn {
         font-size: 31px;
     }
+    .container {
+        border-radius: 5px;
+        /* background-color: #f2f2f2; */
+        background-color: #efefff;
+        padding: 35px;
+        font-size: 20px;
+    }
+    .table {
+        font-size: 19px;   
+    }
 }
+
 @media (min-width: 640px) {
     .container {
         padding: 35px 68px;
@@ -142,9 +168,7 @@ input[type=text], select, textarea {
     .table {
         display: flex;
         flex-direction: column;
-        /* display: flex;
-        flex-direction: column; */
-        font-size: 20px;
+        font-size: 21px;
     }
     .table thead {
         display: flex;

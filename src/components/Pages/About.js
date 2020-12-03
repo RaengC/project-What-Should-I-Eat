@@ -7,8 +7,16 @@ export const About = () => (
             <h1 className="page-title">About</h1>
         </div>
         <div className="container">
-            <h2>How to use this App</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim placerat luctus. Nunc viverra magna magna, at pulvinar odio finibus id. Curabitur convallis ipsum ac iaculis fermentum. Proin sit amet nulla lorem. Nunc id vulputate nibh, ut efficitur ligula. Morbi sodales semper convallis. Morbi pellentesque, erat ullamcorper rhoncus semper, dolor erat ullamcorper sem, sit amet aliquam nibh ligula in ex. In eget justo sem. Vivamus at elit porttitor, pretium velit sit amet, feugiat lacus. </p>
+            <h3 className="about-headers">How to use this App</h3>
+            <br></br>
+            <p>A freezer/fridge/pantry inventory app. Where you can add items (in any format you like), set a “use by” date, remove portions, filter and delete. </p>
+            <br></br>
+            <p>This is app can only be used on one device (if you want to keep all your items that is!). There is no login and all your data is kept on your local device. </p>
+            <br></br>
+            <h4 className="about-headers">Created by Raeng Castagna</h4>
+            <a className="about-link"
+            href="https://github.com/RaengC">Check out my github here</a>
+            
         </div>
     </Fragment>
 );

@@ -1,4 +1,4 @@
-/* (Navbar.js) */
+/* ====(Navbar.js)==== */
 
 /* ====( Sliding Menu )==== */
 
@@ -23,7 +23,6 @@
 }
 
 /* ====(Menu)==== */
-
 .nav-bar {
     display: flex;
     flex-direction: column;
@@ -58,7 +57,6 @@
 
 /* (MenuButton.js) */
 /* ====(Toggle Button)==== */
-
 .toggle-menu-btn {
     position: fixed;
     top: 1rem;
@@ -103,7 +101,6 @@
 }
 
 .active-menu-btn::before {
-    /* content: "X"; */
     font-size: 1.5rem;
     top: 0.47rem;
     left: 0.88rem;

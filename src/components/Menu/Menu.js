@@ -13,7 +13,7 @@ export const Menu = () => {
                 onClick={() => setToggle(!toggle)} />
             <MenuButton 
                 toggle={toggle} 
-                    onClick={() => setToggle(!toggle)} />
+                onClick={() => setToggle(!toggle)} />
         </Fragment>
     );
 };

@@ -3,7 +3,6 @@ import { NewItemForm } from './NewItemForm';
 
 import '../Pages.css'
 
- // Local Storage. TODO: make DRY (this function also in NewItemForm)
  function useLocalStorage(key, initialValue) {
     const [storedValue, setStoredValue] = useState(() => {
         try {
@@ -14,7 +13,6 @@ import '../Pages.css'
             return initialValue;
         }
     });
-
     const setValue = value => {
         try {
             const valueToStore =
@@ -33,9 +31,8 @@ export const NewItem = (props) => {
 
     // push item object into an array. 
     const addItem = (item) => {
-        setItems([...items, item])
-        props.setItems([...items, item])
-        // alert("You have added an item.")
+        setItems([...items, item]);
+        props.setItems([...items, item]);
     };
 
     return (
