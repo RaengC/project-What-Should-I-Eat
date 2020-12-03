@@ -25,6 +25,7 @@ export const FindFood = (props) => {
             </div>
             <div className="container">
                 <p>Your top 10 items to eat before expiry are:</p>
+                <br></br>
                 
             <table className="table">
                 <thead className="table-header">

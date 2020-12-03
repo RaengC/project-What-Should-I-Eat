@@ -16,7 +16,7 @@ export const Home = (props) => {
         <div className="container">
             <p className="home-parag">Click the button to find your top foods to Eat before expiry. </p>
            
-            <Link to='/findfood' className="submit-btn home-submit">Find Food to Eat</Link>
+            <Link to='/findfood' className="submit-btn">Find Food to Eat</Link>
         </div>
 
     </Fragment>

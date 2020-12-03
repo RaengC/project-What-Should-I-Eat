@@ -15,6 +15,10 @@
 }
 /* use of var for global color */
 
+.container p {
+    text-align: center;
+}
+
 .page-title {
     color: var(--main);
     font-size: 2rem;
@@ -48,14 +52,16 @@ input[type=text], select, textarea {
     font-size: 20px;
     margin: 15px 0;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
 
 
 /* ====(Inventory.js)==== */
 .table {
-    /* display: flex;
-    flex-wrap: wrap; */
+    border-collapse: collapse;
     font-size: 14px;
+    
 }
 
 .table-body tr:hover {
@@ -65,15 +71,11 @@ input[type=text], select, textarea {
 }
 
 .table th {
-    border: 1px solid black; 
-    border-collapse: collapse; 
+    border-bottom: 2px solid var(--main); 
     padding: 2px;
     /* font-size: 16px; */
 }
 
-.table td {
-    border-collapse: collapse;
-}
 
 .table-header tr{
     background-color: var(--main);
@@ -96,7 +98,14 @@ input[type=text], select, textarea {
     margin: 0 0 2em;
 }
 
+@media (min-width: 500px) {
+
+}
 @media (min-width: 640px) {
+    .container {
+        padding: 35px 68px;
+        font-size: 21px;
+    }
     .table {
         display: flex;
         flex-direction: column;

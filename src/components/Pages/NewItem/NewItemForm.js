@@ -30,7 +30,7 @@ export const NewItemForm = (props) => {
         setCategory('')
         setLocation('')
         setAmount('')
-        setExpiry('')
+        setExpiry('') 
     }; 
 
     // Local Storage 

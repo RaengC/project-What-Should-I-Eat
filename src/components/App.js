@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import { Menu } from './Menu';
@@ -9,7 +9,16 @@ export const App = () => {
 
   const localItems = localStorage.getItem('items');
     // passes the localStorage items to state. 
-    const [items, setItems] = useState(JSON.parse(localItems));
+  const [items, setItems] = useState(JSON.parse(localItems));
+
+    
+  // useEffect(() => {
+  //   const refresh = setInterval(() => {
+  //     console.log("this will run every second")
+  //   }, 1000);
+  //   return () => clearInterval(refresh)
+  // }, [])
+
 
   return (
     
