@@ -11,7 +11,7 @@ export const About = () => (
             <br></br>
             <p>A freezer/fridge/pantry inventory app. Where you can add items (in any format you like), set a “use by” date, remove portions, filter and delete. </p>
             <br></br>
-            <p>This is app can only be used on one device (if you want to keep all your items that is!). There is no login and all your data is kept on your local device. </p>
+            <p>This is app can only be used on one device (if you want to keep all your items in one place that is!). There is no login and all your data is kept on your local storage. </p>
             <br></br>
             <h4 className="about-headers">Created by Raeng Castagna</h4>
             <a className="about-link"

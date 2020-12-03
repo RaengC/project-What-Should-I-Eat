@@ -15,7 +15,7 @@ export const Home = (props) => {
         </div>
         <div className="container">
             <br></br>
-            <p className="home-parag">Add, sort and delete items your pantry items.  </p>
+            <p className="home-parag">Add, sort and delete your pantry items.  </p>
             <p className="home-parag">Then click the button below to find 'What You Should Eat' before expiry. </p>
            
             <Link to='/findfood' className="submit-btn" id="food-select-btn">Find Food to Eat</Link>

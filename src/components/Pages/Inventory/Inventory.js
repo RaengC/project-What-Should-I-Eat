@@ -38,17 +38,17 @@ export const Inventory = (props) => {
 
     const deleteHandler = (id) => {
         // pop up to confirm if want to delete
-        if (window.confirm('Are you sure you wish to delete this item?')) {
-            // Filter through props 'items' array, to find ID clicked
-            const updateStorage = items.filter(item => item.id !== id);
-            console.log('updateStorage', updateStorage) //removes item clicked, consoles new array!!
+        
+        // Filter through props 'items' array, to find ID clicked
+        const updateStorage = items.filter(item => item.id !== id);
+        console.log('updateStorage', updateStorage) //removes item clicked, consoles new array!!
 
-            // Delete orginal local storage and replace with above
-            const deletedItem = localStorage.setItem('items', JSON.stringify(updateStorage));
-            console.log(deletedItem);
-            // refreshes the page once change confirmed
-            window.location.reload()
-        } 
+        // Delete orginal local storage and replace with above
+        const deletedItem = localStorage.setItem('items', JSON.stringify(updateStorage));
+        console.log(deletedItem);
+        // refreshes the page once change confirmed
+        window.location.reload()
+        
         return    
     }
 

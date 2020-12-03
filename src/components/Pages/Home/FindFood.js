@@ -6,7 +6,9 @@ import '../Pages.css'
 export const FindFood = (props) => {
     // LocalStorage passed from App.js
     const { items } = props;
-    
+    if (!items) {
+        items = []
+    } 
     // Sorts Items by expiry date for display
     let sortedItems = [...items];
     sortedItems.sort((a, b) => {

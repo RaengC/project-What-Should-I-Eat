@@ -207,3 +207,16 @@ input[type=text], select, textarea {
         font-size: 19px;
     }
 }
+
+@media (min-width: 1062px) {
+    .table {
+        max-width: 929px;
+        margin-left:auto; 
+        margin-right:auto;
+    }
+    .new-item-form {
+        max-width: 929px;
+        margin-left:auto; 
+        margin-right:auto;
+    }
+}

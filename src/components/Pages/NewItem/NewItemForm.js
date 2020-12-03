@@ -60,7 +60,8 @@ export const NewItemForm = (props) => {
 
     return (
         <Fragment>
-            <form onSubmit={handleSubmit} className="container">
+            <div className="container">
+            <form onSubmit={handleSubmit} className="new-item-form">
                 <div className="form-row">
                     <lable className="form-label"> Item Name: </lable>         
                         <input 
@@ -123,6 +124,7 @@ export const NewItemForm = (props) => {
                     value="Submit"
                 />
             </form>
+            </div>
         </Fragment>
     );
 }
