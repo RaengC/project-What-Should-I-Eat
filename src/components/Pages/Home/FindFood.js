@@ -5,7 +5,8 @@ import '../Pages.css'
 
 export const FindFood = (props) => {
     // LocalStorage passed from App.js
-    const { items } = props;
+    // needs to be let (not const) to allow check
+    let { items } = props;
     if (!items) {
         items = []
     } 
