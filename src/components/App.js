@@ -26,7 +26,7 @@ export const App = () => {
       <Menu />
       <Switch>
         <Route exact path='/' component={() => <Home items={items}/>} />
-        <Route path='/new' component={NewItem} />
+        <Route path='/new' component={() => <NewItem items={items} setItems={setItems}/>} />
         <Route path='/setup' component={SetUp} />
         <Route path='/inventory' component={ () => <Inventory items={items}/>}>
           {/* {items ? <Inventory /> : <Redirect to={'/setup'} />} */}

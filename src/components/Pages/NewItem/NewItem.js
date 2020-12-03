@@ -28,12 +28,13 @@ import '../Pages.css'
     return [storedValue, setValue];
 }
 
-export const NewItem = () => {
+export const NewItem = (props) => {
     const [items, setItems] = useLocalStorage('items', '')
 
     // push item object into an array. 
     const addItem = (item) => {
         setItems([...items, item])
+        props.setItems([...items, item])
         alert("You have added an item.")
     };
 

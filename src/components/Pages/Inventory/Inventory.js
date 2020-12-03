@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 import '../Pages.css'
 
 export const Inventory = (props) => {
-    const { items } = props;
- 
+    let { items } = props;
+    if (!items) {
+        items = []
+    } 
     const [sortConfig, setSortConfig] = useState({});
-    
+
     // need to pass useMemo function to display the change on the DOM
     const sortedItems = useMemo( () => {
         let sortedItems = [...items];
