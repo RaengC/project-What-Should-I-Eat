@@ -19,6 +19,7 @@ export const FindFood = (props) => {
         if (a.expiry > b.expiry) {
             return 1
         }
+        console.log(sortedItems)
         return 0;
     });
 
