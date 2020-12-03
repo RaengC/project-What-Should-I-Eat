@@ -1,6 +1,6 @@
 # What Should I Eat? App
 
-Live Link [HERE](http://pretty-ball.surge.sh/#/)
+Live Link [HERE](http://chief-order.surge.sh/#/)
 ## User Stories
 * A freezer/fridge/pantry inventory app. Where you can add items (in portions), set a “use by” date, remove portions, filter/sort/search and get notifications when things are close to expiring.
 * To solve the issue of waste, overspending,  and to assist with portion sizing. 
