@@ -27,8 +27,8 @@ import '../Pages.css'
 }
 
 export const NewItem = (props) => {
-    const [items, setItems] = useLocalStorage('items', '')
-
+    const [items, setItems] = useLocalStorage('items', '');
+    const [submitMsg, setSubmitMsg] = useState('');
     // push item object into an array. 
     const addItem = (item) => {
         setItems([...items, item]);
@@ -46,7 +46,6 @@ export const NewItem = (props) => {
             />
         </Fragment>
     )
-
 }
 
 

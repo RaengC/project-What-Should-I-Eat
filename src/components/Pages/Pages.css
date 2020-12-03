@@ -106,6 +106,10 @@ input[type=text], select, textarea {
     margin: 0 0 2em;
 }
 
+.home-parag span {
+    font-weight: bold;
+}
+
 /* ====(Food To Eat page)==== */
 
 .table-find {

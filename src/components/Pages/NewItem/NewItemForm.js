@@ -13,7 +13,7 @@ export const NewItemForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(name, category, location, amount, expiry);
+        // console.log(name, category, location, amount, expiry);
 
         // Passed to parent, NewItem to store as object in local storage array. 
         props.onSubmit({
@@ -114,6 +114,7 @@ export const NewItemForm = (props) => {
                     <lable className="form-label">Select Expiry Date: </lable>    
                     <DatePicker 
                         dateFormat="dd/MM/yyyy"
+                        required
                         selected={expiry} 
                         onChange={date => setExpiry(date)}
                         placeholderText="Select a date here"
