@@ -59,8 +59,9 @@ export const Inventory = (props) => {
                 <h1 className="page-title">Pantry Inventory</h1>
             </div>
             <div className="container">
-                <p>Sort by any value in header.</p>
-                <p>To delete click on any item.</p>
+
+                <p>Your complete pantry. Sort by any value by clicking name in header.</p>
+                <p>Click the ✓ button to remove.</p>
                 <br></br>
             <table className="table">
                 <thead className="table-header">
@@ -94,6 +95,7 @@ export const Inventory = (props) => {
                             onClick={ () => requestSort('expiry')}>
                             Expiry
                         </th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody className="table-body">
@@ -104,14 +106,19 @@ export const Inventory = (props) => {
                         // console.log(date)
                         return (
                             <tr className="table-row"
-                                key={item.id}
-                                onClick={() => deleteHandler(item.id)}>
+                                key={item.id}>
                                 <th>{item.name}</th>
                                 <th>{item.category}</th>
                                 <th>{item.location}</th>
                                 <th>{item.amount}</th>
                                 <th>{date}</th>
-                                
+                                <th>
+                                    <button 
+                                        className="delete-btn"
+                                        onClick={() => deleteHandler(item.id)}
+                                    >
+                                    ✓</button>
+                                </th>
                             </tr>
                         )
                     })}
